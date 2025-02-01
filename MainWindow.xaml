@@ -1,0 +1,71 @@
+﻿<Window x:Class="WpfEmguCvDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Emgu CV WPF Video Player" Height="500" Width="900">
+    <!-- Grid 레이아웃: 상단, 중앙(영상), 하단 3개 행 -->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- 상단 버튼/파일명 표시 -->
+            <RowDefinition Height="*"/>
+            <!-- 중앙: 영상 표시 (가변) -->
+            <RowDefinition Height="Auto"/>
+            <!-- 하단: 재생/탐색 UI -->
+        </Grid.RowDefinitions>
+
+        <!-- (1) 상단 영역: 파일 열기 버튼 + 파일명 표시 -->
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="5">
+            <Button x:Name="btnSelectVideo" Content="영상 선택" 
+                    Click="btnSelectVideo_Click" Margin="0,0,5,0"/>
+            <TextBlock x:Name="txtFileName" VerticalAlignment="Center" 
+                       Text="파일이 선택되지 않았습니다."
+                       Margin="10,0,0,0"/>
+        </StackPanel>
+
+        <!-- (2) 중앙 영역: Emgu CV 디코딩된 프레임을 표시 -->
+        <Grid Grid.Row="1" Margin="5">
+            <Image x:Name="imgDisplay" Stretch="Uniform"/>
+
+            <!-- 오디오 재생용 MediaElement (숨김) -->
+            <MediaElement x:Name="mediaElement"
+                          Visibility="Collapsed"
+                          LoadedBehavior="Manual"
+                          UnloadedBehavior="Manual"
+                          MediaOpened="mediaElement_MediaOpened"
+                          MediaEnded="mediaElement_MediaEnded" />
+        </Grid>
+
+        <!-- (3) 하단 영역: 재생/일시정지/정지, 현재시간, 슬라이더, 전체시간, 볼륨슬라이더 -->
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Margin="5" VerticalAlignment="Center">
+            <!-- 재생/일시정지 버튼 -->
+            <Button x:Name="btnPlayPause" Content="▶" Width="40" 
+                    Click="btnPlayPause_Click" />
+
+            <!-- 정지 버튼 -->
+            <Button x:Name="btnStop" Content="■" Width="40" Margin="5,0,0,0"
+                    Click="btnStop_Click" />
+
+            <!-- 현재 재생 시간 표시 -->
+            <TextBlock x:Name="txtCurrentTime" Text="00:00:00" 
+                       Margin="10,0,10,0" VerticalAlignment="Center"/>
+
+            <!-- 탐색 슬라이더 (클릭 시 즉시 이동) -->
+            <Slider x:Name="sliderSeekBar" Width="300"
+                    TickFrequency="1"
+                    IsSnapToTickEnabled="False"
+                    Minimum="0"
+                    PreviewMouseDown="sliderSeekBar_PreviewMouseDown"
+                    ValueChanged="sliderSeekBar_ValueChanged" />
+
+            <!-- 총 길이(마지막 탐색시간) 표시 -->
+            <TextBlock x:Name="txtTotalTime" Text="00:00:00"
+                       Margin="10,0,10,0" VerticalAlignment="Center"/>
+
+            <!-- 볼륨 슬라이더 (0 ~ 1) -->
+            <TextBlock Text="볼륨" VerticalAlignment="Center" Margin="10,0,5,0"/>
+            <Slider x:Name="sliderVolume" Width="100" Minimum="0" Maximum="1" Value="0.5"
+                    ValueChanged="sliderVolume_ValueChanged"
+                    VerticalAlignment="Center"/>
+        </StackPanel>
+    </Grid>
+</Window>
