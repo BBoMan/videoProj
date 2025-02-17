@@ -145,26 +145,30 @@ namespace WpfApp2
         }
 
 
-        private void sliderTimeline_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-            if (mediaElement.Source != null)
-            {
-                mediaElement.Position = TimeSpan.FromSeconds(e.NewValue);
-            }
-        }
+        //private void sliderTimeline_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        //{
+        //    if (mediaElement.Source != null)
+        //    {
+        //        mediaElement.Position = TimeSpan.FromSeconds(e.NewValue);
+        //    }
+        //}
 
-        private void Thumbnail_Click(object sender, MouseButtonEventArgs e)
-        {
-            Image clickedImage = sender as Image;
-            if (clickedImage == null) return;
+        // 섬네일 클릭 시, 해당 장면으로 전환
+        //private void Thumbnail_Click(object sender, MouseButtonEventArgs e)
+        //{
+        //    Image clickedImage = sender as Image;
+        //    if (clickedImage == null) return;
 
-            // 클릭한 썸네일의 DataContext를 가져오기
-            ThumbnailItem selectedThumbnail = clickedImage.DataContext as ThumbnailItem;
-            if (selectedThumbnail == null) return;
+        //    // 클릭한 썸네일의 DataContext를 가져오기
+        //    ThumbnailItem selectedThumbnail = clickedImage.DataContext as ThumbnailItem;
+        //    if (selectedThumbnail == null) return;
 
-            // 선택한 시간으로 비디오 이동
-            mediaElement.Position = TimeSpan.FromSeconds(selectedThumbnail.TimePosition);
-        }
+        //    // 선택한 시간으로 비디오 이동
+        //    mediaElement.Position = TimeSpan.FromSeconds(selectedThumbnail.TimePosition);
+
+        //    mediaElement.Pause();
+
+        //}
 
 
 

@@ -6,11 +6,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
   </ItemGroup>
-  <ItemGroup>
-    <Compile Update="UserControl1.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Update="Resource1.resx">
       <SubType>Designer</SubType>
@@ -18,9 +14,6 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="MainWindow.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="UserControl1.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

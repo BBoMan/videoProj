@@ -21,8 +21,6 @@ C:\Users\94320\source\repos\WpfApp2\WpfApp2\obj\Debug\net9.0-windows\WpfApp2.Res
 C:\Users\94320\source\repos\WpfApp2\WpfApp2\obj\Debug\net9.0-windows\WpfApp2.csproj.GenerateResource.cache
 C:\Users\94320\source\repos\WpfApp2\WpfApp2\bin\Debug\net9.0-windows\Image\minimum.png
 C:\Users\94320\source\repos\WpfApp2\WpfApp2\obj\Debug\net9.0-windows\WpfApp2_MarkupCompile.lref
-C:\Users\94320\source\repos\WpfApp2\WpfApp2\obj\Debug\net9.0-windows\UserControl1.baml
-C:\Users\94320\source\repos\WpfApp2\WpfApp2\obj\Debug\net9.0-windows\UserControl1.g.cs
 C:\Users\94320\source\repos\WpfApp2\WpfApp2\bin\Debug\net9.0-windows\Wpf.Ui.dll
 C:\Users\94320\source\repos\WpfApp2\WpfApp2\obj\Debug\net9.0-windows\WpfApp2.csproj.AssemblyReference.cache
 C:\Users\94320\source\repos\WpfApp2\WpfApp2\obj\Debug\net9.0-windows\WpfApp2.csproj.Up2Date
